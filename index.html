@@ -1,7 +1,22 @@
-<!DOCTYPE html>
 <html>
+<head>
+<title></title>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<form name="stat" action="" method="post">
+URL: <input name="url" type="text" size="87"><br />
+<input type="submit" name="go" value="Отправить"><br /><br />
+</form>
+<hr />
 </body>
 </html>
+<?php
+
+if (isset($_POST['go']) && $_POST['go'] != null && 
+isset($_POST['url']) && $_POST['url'] != null){
+
+$url = $_POST['url'];
+echo $url;
+
+}
+?>
