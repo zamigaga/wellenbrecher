@@ -3,20 +3,19 @@
 <title></title>
 </head>
 <body>
-<form name="stat" action="" method="post">
-URL: <input name="url" type="text" size="87"><br />
-<input type="submit" name="go" value="Отправить"><br /><br />
+<form action="http://mydomainname.com/folder/anotherFolder/theAPI.php" method="get">
+        <div id="formtext">Name</div>
+        <input type="text" name="arg1">
+        <div id="formtext"><br>Email Address:</div>
+        <input type="text" name="arg2"><br>
+        <div id="formtext"><br>Password</div>
+        <input type="text" name="arg3"><br><br>
+        <input type="submit" name="submit" value="Submit">
 </form>
-<hr />
-</body>
-</html>
 <?php
-
-if (isset($_POST['go']) && $_POST['go'] != null && 
-isset($_POST['url']) && $_POST['url'] != null){
-
-$url = $_POST['url'];
-echo $url;
-
-}
+$name = $_POST['Name'];
+$email = $_POST['Email'];
+$password = $_POST['Password'];
+$response = file_get_contents('http://domain.com/folder/api.php?Name=' . $name . '&Email=' . $email . '&Password=' . $password);
+echo $response;
 ?>
