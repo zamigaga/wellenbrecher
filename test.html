@@ -10,7 +10,7 @@
 }
 
 function setPrint () {
-  this.contentWindow.__container__ = this;
+  this.contentWindow.__container__ = 'http://box-api.wellenbrecher.svc.k8s.stage/api/v1/weight/label/';
   this.contentWindow.onbeforeunload = closePrint;
   this.contentWindow.onafterprint = closePrint;
   this.contentWindow.print();
