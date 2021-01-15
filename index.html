@@ -1,15 +1,15 @@
-<html>
+<!-- <html>
 <head>
 <title></title>
 </head>
 <body>
 <form action="http://box-api.wellenbrecher.svc.k8s.stage/api/v1/weight/label/" method="post">
         <div id="formtext">Name</div>
-        <input type="text" name="arg" value="'.$name.'">
-<!--         <div id="formtext"><br>Email Address:</div>
+        <input type="text" name="arg">
+        <div id="formtext"><br>Email Address:</div>
         <input type="text" name="arg2"><br>
         <div id="formtext"><br>Password</div>
-        <input type="text" name="arg3"><br><br> -->
+        <input type="text" name="arg3"><br><br>
         <input type="submit" name="submit" value="Submit">
 </form>
 <?php
@@ -18,3 +18,15 @@ $response = file_get_contents('http://box-api.wellenbrecher.svc.k8s.stage/api/v1
 echo $response;
 ?>
 <html>
+ -->
+
+ <form method="POST">
+    <input type="text" name="name">
+</form>
+<?php
+$text = isset($_POST['name']) ? $_POST['name'] : false;
+if($text !== false) {
+    $url = "http://box-api.wellenbrecher.svc.k8s.stage/api/v1/weight/label/$text";
+    header('Location: ' . $url);
+}
+?>
