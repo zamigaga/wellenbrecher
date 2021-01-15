@@ -3,7 +3,7 @@
 <title></title>
 </head>
 <body>
-<form action="box-api.wellenbrecher.svc.k8s.stage/api/v1/weight/label/" method="get">
+<form action="http://box-api.wellenbrecher.svc.k8s.stage/api/v1/weight/label/" method="get">
         <div id="formtext">Name</div>
         <input type="text" name="">
 <!--         <div id="formtext"><br>Email Address:</div>
@@ -16,6 +16,6 @@
 $name = $_POST['Name'];
 $email = $_POST['Email'];
 $password = $_POST['Password'];
-$response = file_get_contents('box-api.wellenbrecher.svc.k8s.stage/api/v1/weight/label/' . $name . '&Email=' . $email . '&Password=' . $password);
+$response = file_get_contents('http://box-api.wellenbrecher.svc.k8s.stage/api/v1/weight/label/' . $name );
 echo $response;
 ?>
