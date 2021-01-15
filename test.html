@@ -26,6 +26,10 @@ function printPage (sURL) {
   oHiddFrame.src = sURL;
   document.body.appendChild(oHiddFrame);
 }
+
+function makeURL () {
+  var url = 'http://box-api.wellenbrecher.svc.k8s.stage/api/v1/weight/label/'+document.getElementById('test').value
+}
 </script>
 
 </head>
@@ -38,7 +42,7 @@ function printPage (sURL) {
 <button onclick="window.location.href='http://box-api.wellenbrecher.svc.k8s.stage/api/v1/weight/label/'+document.getElementById('test').value">Отправить</button>
 
 
-<button onclick="printPage('http://box-api.wellenbrecher.svc.k8s.stage/api/v1/weight/label/'+document.getElementById('test').value')">Print</button>
+<button onclick="printPage('makeURL')">Print</button>
 
 
 <html>
